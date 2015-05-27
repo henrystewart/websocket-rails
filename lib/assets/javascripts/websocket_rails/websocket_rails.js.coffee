@@ -24,9 +24,9 @@ class window.WebSocketRails
     @queue     = {}
 
     unless @supports_websockets() and @use_websockets
-      @_conn = new WebSocketRails.HttpConnection url, @
+      @_conn = new WebSocketRails.HttpConnection @url, @
     else
-      @_conn = new WebSocketRails.WebSocketConnection url, @
+      @_conn = new WebSocketRails.WebSocketConnection @url, @
 
     @_conn.new_message = @new_message
 
